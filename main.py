@@ -10,7 +10,7 @@ html = urlopen(req, timeout=15).read().decode("utf8")
 html[:60]
 
 soup = BeautifulSoup(html, 'html.parser')
-work_title = soup.select("h2.title.heading")
+work_title = soup.find("h2", class_="title")
 
 print(work_title)
 print(work_title.string)
